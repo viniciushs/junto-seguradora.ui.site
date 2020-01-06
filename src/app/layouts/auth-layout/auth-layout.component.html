@@ -1,0 +1,22 @@
+<mat-sidenav-container>
+    <mat-sidenav-content>
+        <main fxFlex="100%" fxLayout="column" fxLayoutAlign="center stretch"
+            style="background: url(./assets/images/background-1.jpg); background-size: cover;">
+            <div fxFlex="10%" fxFlex.lt-md="30%"
+                 fxLayout="row" fxLayout.lt-md="column" 
+                 fxLayoutAlign="center center" 
+                 fxLayoutGap.gt-sm="30px">
+                <div class="white-circle"></div>
+                <h1 class="text-white"
+                    fxLayoutAlign="center center" fxLayoutAlign.lt-md="center center">
+                    Nova Plataforma de Cotação de Apólices
+                </h1>
+            </div>
+            <div fxFlex="50%" 
+                 fxLayout="column" 
+                 fxLayoutAlign="center stretch">
+                <router-outlet></router-outlet>
+            </div>
+        </main>
+    </mat-sidenav-content>
+</mat-sidenav-container>

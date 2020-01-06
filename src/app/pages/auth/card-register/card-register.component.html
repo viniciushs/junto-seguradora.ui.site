@@ -1,0 +1,76 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+    <div fxFlex="30%" fxFlex.lt-md="80%">
+        <mat-card>
+            <div fxFlexFill fxLayoutAlign="center center">
+                <h3>Cadastre-se</h3>
+            </div>
+            <mat-card-content>
+                <div fxLayout="column" fxFlexFill [formGroup]="form">
+                    <mat-form-field>
+                        <input matInput placeholder="Nome" formControlName="name">
+                        <mat-error align="start" *ngIf="form.get('name').errors?.required">
+                            Campo obrigatório.
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <input matInput type="email" placeholder="Email" formControlName="email" [email]="true">
+                        <mat-error align="start" *ngIf="form.get('email').errors?.required">
+                            Campo obrigatório.
+                        </mat-error>
+                        <mat-error align="start" *ngIf="form.get('email').errors?.email">
+                            Email invalido.
+                        </mat-error>
+                    </mat-form-field>
+
+                    <div fxLayout="row" fxFlexFill fxLayoutGap="10px">
+                        <mat-form-field fxFlex="50%">
+                            <input matInput [type]="'password'" placeholder="Password" formControlName="password">
+                            <mat-error align="start" *ngIf="form.get('password').errors?.required">
+                                Campo obrigatório.
+                            </mat-error>
+                            <mat-error align="start" *ngIf="form.get('password').errors?.minLength">
+                                Password necessita conter mais de 8 caracteres.
+                            </mat-error>
+                            <mat-error align="start" *ngIf="form.get('password').errors?.minNumber">
+                                Password necessita conter pelo menos 1 numeral.
+                            </mat-error>
+                            <mat-error align="start" *ngIf="form.get('password').errors?.distinct">
+                                Password não pode conter caracteres repetidos.
+                            </mat-error>
+                            <mat-error align="start" *ngIf="form.get('password').errors?.notEqual">
+                                Confirmação diferente.
+                            </mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field fxFlex="50%">
+                            <input matInput [type]="'password'" placeholder="Confirme Password"
+                                formControlName="confirmation">
+                            <mat-error align="start" *ngIf="form.get('confirmation').errors?.notEqual">
+                                Password diferente.
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+
+                    <div fxLayout="row" fxFlexFill fxLayoutAlign="center center">
+                        <button mat-raised-button color="success" (click)="submit()">
+                            Cadastrar
+                            <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+            </mat-card-content>
+            <mat-card-actions>
+                <div fxLayout="row" fxLayout.lt-md="column" fxFlexFill fxLayoutAlign="space-between end"
+                    fxLayoutAlign.lt-md="center center" fxLayoutGap.lt-md="10px">
+                    <div fxLayout="row" fxFlex="50%" fxLayoutAlign="start center">
+                        <button fxFlexFill mat-raised-button color="primary" (click)="goToCard(loginEnum)">
+                            <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                            Já possuo acesso
+                        </button>
+                    </div>
+                </div>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>

@@ -1,0 +1,59 @@
+<div fxLayout="row" 
+    fxLayoutAlign="center center">
+    <div fxFlex="30%" fxFlex.lt-md="80%">
+        <mat-card>
+            <div fxFlexFill fxLayoutAlign="center center">
+                <h3>Login</h3>
+            </div>
+            <mat-card-content>
+                <div fxLayout="column" fxFlexFill [formGroup]="form">
+                    <mat-form-field>
+                        <input matInput type="email" placeholder="Email" formControlName="email">
+                        <mat-error align="start" *ngIf="form.get('email').errors?.maxlength">
+                            Tamanho máximo são 128 caracteres
+                        </mat-error>
+                        <mat-hint align="end">
+                            {{form.get('email').value?.length || 0}} / 128
+                        </mat-hint>
+                    </mat-form-field>
+
+                    <div fxLayout="row" fxFlexFill fxLayoutGap="10px">
+                        <mat-form-field fxFlex="90%">
+                            <input matInput [type]="showPassword ? 'text' : 'password'" placeholder="Password"
+                                formControlName="password">
+                        </mat-form-field>
+                        <div fxLayout="row" fxLayoutAlign="end center" fxFlex>
+                            <i (click)="showPassword = !showPassword" class="fa"
+                                [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword }"
+                                aria-hidden="true"></i>
+                        </div>
+                    </div>
+
+                    <div fxLayout="row" fxFlexFill fxLayoutAlign="center center">
+                        <button mat-raised-button color="success" (click)="submit()">
+                            Entrar
+                            <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+            </mat-card-content>
+            <mat-card-actions>
+                <div fxLayout="row" fxLayout.lt-md="column" fxFlexFill 
+                fxLayoutAlign="space-between end" fxLayoutAlign.lt-md="center center" fxLayoutGap.lt-md="10px">
+                    <div fxLayout="row" fxFlex="40%">
+                        <button fxFlexFill mat-raised-button color="primary" (click)="goToCard(rememberEnum)">
+                            <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                            Esqueci a senha
+                        </button>
+                    </div>
+                    <div fxLayout="row" fxFlex="40%">
+                        <button fxFlexFill mat-raised-button color="primary"
+                            (click)="goToCard(registerEnum)">Cadastre-se
+                            <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>

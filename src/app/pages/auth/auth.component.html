@@ -1,0 +1,17 @@
+<swiper #swiperWrapper [config]="config">
+
+    <!-- region :: Remember -->
+    <div class="swiper-slide">
+        <app-card-remember (goTo)="goToPane($event)"></app-card-remember>
+    </div>
+
+    <!-- region :: Login -->
+    <div class="swiper-slide">
+        <app-card-login (goTo)="goToPane($event)"></app-card-login>
+    </div>
+
+    <!-- region :: Register -->
+    <div class="swiper-slide">
+        <app-card-register (goTo)="goToPane($event)"></app-card-register>
+    </div>
+</swiper>

@@ -1,0 +1,23 @@
+<mat-drawer-container>
+    <mat-drawer-content>
+        <div fxLayout="column" ngClass.lt-md="px-2" class="pl-2" fxLayoutGap="20px">
+            <h1>Seguradoras</h1>
+            <div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="10px">
+                <div *ngFor="let seguradora of seguradoras; let i = index;" fxFlex="30%" fxFlex.lt-md="80%" fxLayoutGap="20px"
+                    class="card pb-1 mb-2">
+                    <mat-card>
+                        <div fxLayout="column" fxLayoutAlign="center center">
+                            <div fxFlex="30%" fxFlexFill fxLayoutAlign="center center">
+                                <h3>{{seguradora.nome}}</h3>
+                            </div>
+                            <div fxFlex="30%" fxFlexFill fxLayoutAlign="center center">
+                                <h3>{{seguradora.cnpj|cnpj}}</h3>
+                            </div>
+                        </div>
+
+                    </mat-card>
+                </div>
+            </div>
+        </div>
+    </mat-drawer-content>
+</mat-drawer-container>

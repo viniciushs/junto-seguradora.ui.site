@@ -1,0 +1,122 @@
+@import 'colors';
+
+body {
+  margin:0px;
+  font-family: "Montserrat";
+}
+
+img.img-fluid {
+  width: 100%;
+  height: auto;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+@for $i from 1 through 50 {
+  .fs-#{$i} {
+    font-size: #{$i}px;
+  }
+}
+
+@for $i from 1 through 5 {
+  .m-#{$i} {
+    margin: #{$i * 1}rem;
+  }
+  .my-#{$i} {
+    margin-top: #{$i * 1}rem !important;
+    margin-bottom: #{$i * 1}rem !important;
+  }
+  .mx-#{$i} {
+    margin-left: #{$i * 1}rem;
+    margin-right: #{$i * 1}rem;
+  }
+  .mt-#{$i} {
+    margin-top: #{$i * 1}rem !important;
+  }
+  .mb-#{$i} {
+    margin-bottom: #{$i * 1}rem;
+  }
+  .ml-#{$i} {
+    margin-left: #{$i * 1}rem;
+  }
+  .mr-#{$i} {
+    margin-right: #{$i * 1}rem;
+  }
+}
+@for $i from 1 through 5 {
+  .p-#{$i} {
+    padding: #{$i * 1}rem;
+  }
+  .py-#{$i} {
+    padding-top: #{$i * 1}rem !important;
+    padding-bottom: #{$i * 1}rem !important;
+  }
+  .px-#{$i} {
+    padding-left: #{$i * 1}rem;
+    padding-right: #{$i * 1}rem;
+  }
+  .pt-#{$i} {
+    padding-top: #{$i * 1}rem !important;
+  }
+  .pb-#{$i} {
+    padding-bottom: #{$i * 1}rem;
+  }
+  .pl-#{$i} {
+    padding-left: #{$i * 1}rem;
+  }
+  .pr-#{$i} {
+    padding-right: #{$i * 1}rem;
+  }
+}
+
+.text-left {
+  text-align: left;
+  word-break: break-word;
+}
+
+.text-right {
+  text-align: right;
+  word-break: break-word;
+}
+
+.text-center {
+  text-align: center;
+  word-break: break-word;
+}
+
+.text-justify {
+  text-align: justify;
+  word-break: break-word;
+}
+
+button.mat-success {
+  background-color: $green-color;
+  color: $white-color;
+}
+
+.success,
+.text-success {
+  color: $green-color !important;
+}
+
+button.mat-warning {
+  background-color: $yellow-color;
+  color: $white-color;
+}
+
+.warning,
+.text-warning {
+  color: $yellow-color !important;
+}
+
+button.mat-danger {
+  background-color: $red-color;
+  color: $white-color;
+}
+
+.danger,
+.text-danger {
+  color: $red-color !important;
+}

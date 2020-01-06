@@ -1,0 +1,5 @@
+node_modules
+wildfly_deploy
+package-lock.json
+dist
+.idea

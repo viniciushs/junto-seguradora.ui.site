@@ -1,0 +1,41 @@
+<mat-sidenav-container>
+    <mat-sidenav-content>
+        <mat-toolbar fxLayout="row" fxLayoutAlign.lt-md="space-around center">
+            <!-- region :: Desktop -->
+            <div fxLayout="row" fxFlex="50%" fxLayoutAlign="start center" fxLayoutGap="20px" fxHide.lt-sm>
+                <a routerLink="/" fxLayoutAlign="center center" class="logo">
+                    <img src="./assets/images/logo.png" height="48" class="logo">
+                </a>
+            </div>
+            <div fxLayout="row" fxFlex="50%" fxLayoutAlign="end center" fxHide.lt-sm>
+                <a mat-button [matMenuTriggerFor]="menu">
+                    <mat-icon>person</mat-icon>
+                </a>
+            </div>
+            <!-- endregion :: Desktop -->
+
+            <!-- region :: Mobile -->
+            <div fxLayout="row" fxFlex="33%" fxLayoutAlign="center center" fxHide fxShow.lt-sm>
+                <a routerLink="/" fxLayoutAlign="center center"><img src="./assets/images/logo.png" height="48"
+                        class="logo">
+                </a>
+            </div>
+            <div fxLayout="row" fxFlex="50%" fxLayoutAlign="end center" fxHide fxShow.lt-sm>
+                <a mat-button [matMenuTriggerFor]="menu" class="btn-action">
+                    <mat-icon>person</mat-icon>
+                </a>
+            </div>
+            <!-- endregion :: Mobile -->
+
+            <mat-menu #menu="matMenu" xPosition="before">
+                <button mat-menu-item (click)="logout()">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Logout
+                </button>
+            </mat-menu>
+        </mat-toolbar>
+        <main>
+            <router-outlet></router-outlet>
+        </main>
+    </mat-sidenav-content>
+</mat-sidenav-container>
