@@ -1,7 +1,7 @@
 export const environment = {
   production: false,
-  apiEndpoint: 'http://localhost:3000/api/v1',
-  authEndpoint: 'http://localhost:3000/api/v1/auth',
+  apiEndpoint: 'https://junto-seguradora-app.azurewebsites.net/api/v1',
+  authEndpoint: 'https://junto-seguradora-app.azurewebsites.net/api/v1/Auth',
   authTokenStorage: 'junto-seguradora.hml.token',
   userTokenStorage: 'junto-seguradora.hml.user'
 };
